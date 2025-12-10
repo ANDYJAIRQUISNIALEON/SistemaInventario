@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             MenuVertical = new Panel();
+            button1 = new Button();
             pictureBox1 = new PictureBox();
             BarraTitulo = new Panel();
             btnSlide = new PictureBox();
-            panel1 = new Panel();
+            panelContenedor = new Panel();
             MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             BarraTitulo.SuspendLayout();
@@ -43,12 +44,30 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(46, 125, 50);
+            MenuVertical.Controls.Add(button1);
             MenuVertical.Controls.Add(pictureBox1);
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.Location = new Point(0, 0);
             MenuVertical.Name = "MenuVertical";
             MenuVertical.Size = new Size(250, 650);
             MenuVertical.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(45, 45, 48);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(0, 128);
+            button1.Name = "button1";
+            button1.Size = new Size(250, 40);
+            button1.TabIndex = 0;
+            button1.Text = "Producto";
+            button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -81,23 +100,24 @@
             btnSlide.TabStop = false;
             btnSlide.Click += btnSlide_Click;
             // 
-            // panel1
+            // panelContenedor
             // 
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(250, 50);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1050, 600);
-            panel1.TabIndex = 2;
+            panelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panelContenedor.BackColor = SystemColors.ControlLightLight;
+            panelContenedor.Location = new Point(250, 50);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new Size(1050, 600);
+            panelContenedor.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1300, 650);
-            Controls.Add(panel1);
+            Controls.Add(panelContenedor);
             Controls.Add(BarraTitulo);
             Controls.Add(MenuVertical);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -114,6 +134,7 @@
         private Panel BarraTitulo;
         private PictureBox btnSlide;
         private PictureBox pictureBox1;
-        private Panel panel1;
+        private Panel panelContenedor;
+        private Button button1;
     }
 }
