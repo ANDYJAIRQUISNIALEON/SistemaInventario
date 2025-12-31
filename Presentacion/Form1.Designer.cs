@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             MenuVertical = new Panel();
-            button1 = new Button();
+            btnproducto = new Button();
             pictureBox1 = new PictureBox();
             BarraTitulo = new Panel();
             btnSlide = new PictureBox();
@@ -44,7 +44,7 @@
             // MenuVertical
             // 
             MenuVertical.BackColor = Color.FromArgb(46, 125, 50);
-            MenuVertical.Controls.Add(button1);
+            MenuVertical.Controls.Add(btnproducto);
             MenuVertical.Controls.Add(pictureBox1);
             MenuVertical.Dock = DockStyle.Left;
             MenuVertical.Location = new Point(0, 0);
@@ -52,22 +52,23 @@
             MenuVertical.Size = new Size(250, 650);
             MenuVertical.TabIndex = 0;
             // 
-            // button1
+            // btnproducto
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(45, 45, 48);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 128);
-            button1.Name = "button1";
-            button1.Size = new Size(250, 40);
-            button1.TabIndex = 0;
-            button1.Text = "Producto";
-            button1.UseVisualStyleBackColor = false;
+            btnproducto.BackColor = Color.Transparent;
+            btnproducto.FlatAppearance.BorderSize = 0;
+            btnproducto.FlatAppearance.MouseOverBackColor = Color.FromArgb(45, 45, 48);
+            btnproducto.FlatStyle = FlatStyle.Flat;
+            btnproducto.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnproducto.ForeColor = Color.White;
+            btnproducto.Image = (Image)resources.GetObject("btnproducto.Image");
+            btnproducto.ImageAlign = ContentAlignment.MiddleLeft;
+            btnproducto.Location = new Point(0, 128);
+            btnproducto.Name = "btnproducto";
+            btnproducto.Size = new Size(250, 40);
+            btnproducto.TabIndex = 0;
+            btnproducto.Text = "Productos";
+            btnproducto.UseVisualStyleBackColor = false;
+            btnproducto.Click += btnproducto_Click;
             // 
             // pictureBox1
             // 
@@ -91,6 +92,7 @@
             // 
             // btnSlide
             // 
+            btnSlide.Cursor = Cursors.Hand;
             btnSlide.Image = (Image)resources.GetObject("btnSlide.Image");
             btnSlide.Location = new Point(16, 9);
             btnSlide.Name = "btnSlide";
@@ -102,8 +104,8 @@
             // 
             // panelContenedor
             // 
-            panelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panelContenedor.BackColor = SystemColors.ControlLightLight;
+            panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(250, 50);
             panelContenedor.Name = "panelContenedor";
             panelContenedor.Size = new Size(1050, 600);
@@ -113,7 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLightLight;
+            BackColor = Color.Gainsboro;
             ClientSize = new Size(1300, 650);
             Controls.Add(panelContenedor);
             Controls.Add(BarraTitulo);
@@ -135,6 +137,6 @@
         private PictureBox btnSlide;
         private PictureBox pictureBox1;
         private Panel panelContenedor;
-        private Button button1;
+        private Button btnproducto;
     }
 }
